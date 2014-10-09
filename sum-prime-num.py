@@ -9,68 +9,6 @@ print(l)
 
 new_list = []
 
-def do_the_math():
-    l1 = l[:]
-    l2 = l[:]
-    k = None
-
-    res_list = []
-    global_result = []
-
-    for k in l:
-        first = k
-        #res_list.append(first)
-
-        for i in xrange(len(l)):
-            #print "result list", len(res_list)
-            #print "basic list", len(l)
-            if len(res_list) == len(l):
-                global_result.append(res_list)
-                res_list = []
-            #if l[i] not in res_list:
-            #print("first: " + str(first))
-            for j in xrange(len(l)):
-                # This is the first and normal pass
-                if l[j] not in res_list and first != l[j]:
-                    second = l[j]
-                    res = first + second
-                    #print "first:", first, "second:",second, "result:", res
-                    #print("res: " + str(res))
-
-                    if is_prime(res):
-                        #print "first:", first, "second:",second, "result:", res
-                        if first not in res_list:
-                            # This is only for the first pass...
-                            res_list.append(first)
-                        #res_list.append(l[j])
-                        res_list.append(second)
-                        # prepare for next turn.
-                        first = res_list[-1]
-                        break
-        #print "=" * 10
-        #first = k
-
-
-    for ls in global_result:
-        if len(ls) == len(l):
-            print("result list: " + str(ls))
-        #print("res_list: " + str(res_list))
-
-
-#def sum_of_neighbours():
-#    for i in l:
-#        first = i
-#        for j in l:
-#            if i == j:
-#                continue
-#            second = i
-#            sum = first + second
-#            isprime_number = is_prime(sum)
-#            if isprime_number:
-#                new_list.append(first)
-#                new_list.append(second)
-#                print(first + ', ' + second)
-
 result_list = []
 result_collection = []
 remain = []
@@ -131,10 +69,6 @@ def is_prime(number):
     for x in xrange(3, int(number**0.5) + 1, 2):
         if number % x == 0:
             return False
-    #if number % (int(number**0.5) + 1) == 0:
-    #    print("number: " + str(number))
-    #    print("divider: " + str(int(number**0.5)))
-    #    return False
 
     return True
 
